@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Zadanie 5. Procesy (ps)
 # usługi, wraz ze informacją przez który proces została uruchomiona, nr. portu i czy usługa nasłuchuje (netstat -penault)
 echo "Usługi, wraz ze informacją przez który proces została uruchomiona, nr. portu i czy usługa nasłuchuje" | tee -a Zadanie.txt
@@ -72,7 +74,5 @@ echo "" | tee -a Zadanie.txt
 sudo lsof -i -n -P | grep UDP | more | tee -a Zadanie.txt
 echo "" | tee -a Zadanie.txt
 
-# --Jest to swoisty przerywnik by nie latać po całej konsoli
 read -n 1 -s -r -p "Naciśnij dowolny klawisz by kontynuować."
-# -- Pusta linia po prostu. Długo by wyjaśniać, jak ją usuniesz to zobaczysz :) ale lepiej jak zostanie.
 echo ""
