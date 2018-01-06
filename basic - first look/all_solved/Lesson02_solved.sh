@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Zmienne
+# Variables
+currentDate=$(date +"%F") # Data Date
+currentTime=$(date +"%T") # Czas Time
+
 # [PL] Funkcje
 # [ENG] Functions
 
@@ -20,24 +25,24 @@ function check_install()
     done
 }
 
-function update_pack ()
+function update_pack()
 {
     sudo apt-get update && sudo apt-get upgrade -y |& tee -a log$currentDate.log
 }
 
-# Zmienne
-# Variables
-currentDate=$(date +"%F") # Data Date
-currentTime=$(date +"%T") # Czas Time
+function main()
+{
+	# Instalowanie aktualizacji
+	# Installing the update
+	update_pack
+
+	# Instalacja usług
+	# Installation of services
+	check_install apache2 php7.0 libapache2-mod-php7.0 mysql-server php7.0-mysql phpmyadmin proftpd openssl
+}
 
 # Begin
 
-#Instalowanie aktualizacji
-# Installing the update
-update_pack
-
-# Instalacja usług
-# Installation of services
-check_install apache2 php7.0 libapache2-mod-php7.0 mysql-server php7.0-mysql phpmyadmin proftpd openssl
+main
 
 # End.
