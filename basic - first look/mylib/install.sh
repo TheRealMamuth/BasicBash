@@ -78,7 +78,7 @@ function install_pack()
                 echo "Pakiet $install nie jest zainstalowany. Nastapi jego instalacja" | tee -a ./log/log_${currentDate}.log &> /dev/null
                 show_message INFO "Nastapi instalacja pakietu $install"
                 sudo $packman install $install | tee -a ./log/log_${currentDate}.log &> /dev/null
-                    if $? -eq 0 ]; then
+                    if [ $? -eq 0 ]; then
                         echo "Pakiet $install zosatła poprawnie zainstalowany" | tee -a ./log/log_${currentDate}.log &> /dev/null
                         show_message OK "Pakiet $install został zainstalowany poprawnie"
                     else
@@ -115,7 +115,7 @@ function install_webmin()
             show_message ERROR "Webmin nie zainstalowany, pakiet .deb nie zlokalizowany."
         fi
         show_message INFO "Sprzatanie po czynnościach związanych z aktualizacją."
-        echo "Sprzatam - katalog ./temp_download" | | tee -a ./log/log_${currentDate}.log &> /dev/null
+        echo "Sprzatam - katalog ./temp_download" | tee -a ./log/log_${currentDate}.log &> /dev/null
         rm -rf ./temp_download | tee -a ./log/log_${currentDate}.log &> /dev/null  
     fi
 }
