@@ -32,17 +32,19 @@ function update_pack()
 
 function main()
 {
-	# Instalowanie aktualizacji
-	# Installing the update
+	# [PL] Instalowanie aktualizacji
+	# [ENG] Installing the update
 	update_pack
 
-	# Instalacja usług
-	# Installation of services
+	# [PL] Instalacja usług
+	# [ENG] Installation of services
 	check_install apache2 php7.0 libapache2-mod-php7.0 mysql-server php7.0-mysql phpmyadmin proftpd openssl
 }
 
 # Begin
 
+# [PL]Wywołanie funkcji main.
+# [ENG] Calling the main function.
 main
 
 # End.
