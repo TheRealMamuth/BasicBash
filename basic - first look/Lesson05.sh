@@ -13,3 +13,18 @@
 # break, continue - przerywanie, przeskakiwanie w petli.
 
 # select
+
+
+# [ENG]
+# Lesson 5.
+
+# We have already learned one for loops - learn more in simple small exercises.
+
+# for
+# for, in, do, done are keywords
+
+# while
+
+# break, continue - interrupting, skipping in a loop.
+
+# select
