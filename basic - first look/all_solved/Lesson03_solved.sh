@@ -19,6 +19,14 @@ function mysystem_info()
         # uname -mrs
     # i kilka innych mozliwości.
 
+    # As a curiosity, you can command such a course without #
+         # cat /etc/issue.net
+         # cat / etc / lsb-lsb_release
+         # cat / proc / sys / kernel / {ostype, osrelease, version}
+         # uname -a | egrep -Eo '#. {1,100}'
+         # uname -mrs
+     # and several other possibilities.
+
     if [ $# -eq 0 ]; then
         echo -e "${BLUE}WARNING - Nie podałeś żadnych argumentów dla funkcji.$NC"
         exit 1
