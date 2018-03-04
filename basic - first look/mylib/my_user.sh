@@ -1,4 +1,14 @@
-#!/bin/bash
+#!/bin/bash -       
+#title           : my_user
+#description     : A script that automatically creates a user / users
+#author		     : Piotr "TheRealMamuth" Kośka
+#date            : 24.02.2018
+#version         : v1.0   
+#usage		     :
+#notes           :
+#bash_version    : 4.4.12(1)-release
+#editor          : visual studio code
+#==============================================================================
 
 function show_menu()
 {
@@ -145,13 +155,13 @@ elif [ $# -eq 1 ]; then
             # File nie uznaje tego za tekst.
             # File does not recognize this as text.
             echo "Nie jest to typowy plik tekstowy!"
-            break
+            exit 1
         fi
     else
         # Plik nie istnieje.
         # File does not exist.
         echo "Plik o podanej nazwie ${1} nie instanieje!"
-        break
+        exit 2
     fi
 else
     # Jak nie większe lub równe od dwóch i nie równe jeden czyli zero - wyswietlamy opcje.

@@ -1,4 +1,14 @@
-#!/bin/bash
+#!/bin/bash -       
+#title           : Lesson07_process automation_solved
+#description     : Creating a user using an automation script
+#author		     : Piotr "TheRealMamuth" Kośka
+#date            : 24.02.2018
+#version         : v1.0   
+#usage		     :
+#notes           :
+#bash_version    : 4.4.12(1)-release
+#editor          : visual studio code
+#==============================================================================
 
 # [PL]
 
@@ -19,7 +29,7 @@
 # From a text file of several users. (We assume that the text file is already properly prepared, ie the user is the first letter of the name, the rest surname, each line in the file is a new user).
 
 # lib
-. ../mylib/infosw.sh
+. ../mylib/infoshow.sh
 . ../mylib/my_user.sh
 
 # BEGIN -------------------------------------------------------------------------------------------------------------------------------------------------------

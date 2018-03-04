@@ -1,4 +1,14 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash   
+#title           : Lesson02_solved
+#description     : Presented solution of the task from the bash lesson.
+#author		     : Piotr "TheRealMamuth" Kośka
+#date            : 24.02.2018
+#version         : v1.0   
+#usage		     :
+#notes           :
+#bash_version    : 4.4.12(1)-release
+#editor          : visual studio code
+#==============================================================================
 
 # Zmienne
 # Variables
@@ -25,6 +35,8 @@ function check_install()
     done
 }
 
+#	Zwykły update i upgrade
+#	Regular update and upgrade
 function update_pack()
 {
     sudo apt-get update && sudo apt-get upgrade -y |& tee -a log$currentDate.log

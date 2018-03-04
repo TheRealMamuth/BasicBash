@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+#title           : Lesson02_solved_aptitude.sh
+#description     : Presented solution of the task from the bash lesson.
+#author		     : Piotr "TheRealMamuth" Kośka
+#date            : 24.02.2018
+#version         : v1.0   
+#usage		     :
+#notes           :
+#bash_version    : 4.4.12(1)-release
+#editor          : visual studio code
+#==============================================================================
 
 # Zmienne
 # Variables
@@ -10,8 +20,8 @@ currentTime=$(date +"%T") # Czas Time
 
 function check_install()
 {
-	# [PL] Funkcja ta sprawdza czy jest zainstalowany pakiet. W przypadku braku pakiety przystepuje do instalacji.
-	# [ENG] This function checks if the package is installed. In the absence of packages, it is included in the installation.
+# 	[PL] Funkcja ta sprawdza czy jest zainstalowany pakiet. W przypadku braku pakiety przystepuje do instalacji.
+# 	[ENG] This function checks if the package is installed. In the absence of packages, it is included in the installation.
     for install in "$@"
     do
         dpkg -s $install &> /dev/null
@@ -32,8 +42,8 @@ function update_pack()
 
 function check_install_aptitude()
 {
-	# [PL] Funkcja ta sprawdza czy jest zainstalowany pakiet. W przypadku braku pakiety przystepuje do instalacji.
-	# [ENG] This function checks if the package is installed. In the absence of packages, it is included in the installation.
+# 	[PL] Funkcja ta sprawdza czy jest zainstalowany pakiet. W przypadku braku pakiety przystepuje do instalacji.
+# 	[ENG] This function checks if the package is installed. In the absence of packages, it is included in the installation.
     for install in "$@"
     do
         dpkg -s $install &> /dev/null
@@ -47,6 +57,8 @@ function check_install_aptitude()
     done
 }
 
+#	Zwykły update i upgrade
+#	Regular update and upgrade
 function update_pack()
 {
     sudo apt-get update |& tee -a log$currentDate.log

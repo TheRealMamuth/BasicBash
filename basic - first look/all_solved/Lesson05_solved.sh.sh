@@ -1,4 +1,14 @@
-#!/bin/bash
+#!/bin/bash -       
+#title           : Lesson05_solved
+#description     : Examples of application of functions
+#author		     : Piotr "TheRealMamuth" Kośka
+#date            : 24.02.2018
+#version         : v1.0   
+#usage		     :
+#notes           :
+#bash_version    : 4.4.12(1)-release
+#editor          : visual studio code
+#==============================================================================
 
 # [PL]
 # Lekcja 5. 
@@ -24,7 +34,7 @@
 
 function example_for_01()
 {
-    # Lista iteracyjnych elementów zapisana w jednej zmienej, odstep miedzy nakami w postaci spacti pozwala na potraktowanie ich jako osobny element. Wykonac iteracje.
+    # Lista iteracyjnych elementów zapisana w jednej zmienej, odstep miedzy znakami w postaci spacti pozwala na potraktowanie ich jako osobny element. Wykonać iteracje.
     # List of iterative elements written in one variable, the space between spars in the form of spacti allows you to treat them as a separate element. Perform iterations.
     words="A B C D E F G H I J K L M N O P R S T U Q W Y X Z"
     echo "Nasz alfabet"
@@ -37,7 +47,7 @@ function example_for_01()
 
 function example_for_02()
 {
-    # Lista iteracyjnych elementów tutaj zastosowanie cudzysłowia powoduje potrzaktowanie wszystkich elemantów jako całość.
+    # Lista iteracyjnych elementów tutaj zastosowanie cudzysłowia powoduje potraktowanie wszystkich elemantów jako całość.
     # List of iterative elements here, the use of inverted commas results in all elemantas as a whole.
     words="A B C D E F G H I J K L M N O P R S T U Q W Y X Z"
     echo "Nasz alfabet"

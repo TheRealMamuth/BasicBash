@@ -1,4 +1,14 @@
-#!/bin/bash
+#!/bin/bash -       
+#title           : Lesson03_solved
+#description     : Presented solution of the task from the bash lesson.
+#author		     : Piotr "TheRealMamuth" Kośka
+#date            : 24.02.2018
+#version         : v1.0   
+#usage		     :
+#notes           :
+#bash_version    : 4.4.12(1)-release
+#editor          : visual studio code
+#==============================================================================
 
 # Variables / Zmienne
 RED="\e[0;31m" # red
@@ -59,6 +69,8 @@ function mysystem_info()
 
 function user_list()
 {
+#   komunikat gdy podamy za mało parametrów do funkcji - komunikat z kolorami.
+#   message when we give too few parameters to the function - message with colors.
     if [ $# -lt 1 ]; then
         echo -e "${BLUE}WARNING: Użyj - ${GREEN}$0 ${RED}parametr$NC"
         echo -e "${BLUE}Dostepne parametry to:$NC"
@@ -68,24 +80,36 @@ function user_list()
         echo -e "${GREEN}bash - ${NC}Zwraca użytkowników z ścieżką /home"
     fi
 
+
     case "$1" in 
         home)
+#           Opcja gdy parametr home.
+#           Option when the home parameter.
             echo -e "${GREEN}Lista użytkowników: $NC"
             awk -F: '/\/home/ {printf "%s:%s\n",$1,$3}' /etc/passwd
             ;;
         uid)
+#           Opcja gdy parametr uid.
+#           Option when the uid parameter.
             echo -e "${GREEN}Lista użytkowników: $NC"
             awk -F: '($3 >= 1000) {printf "%s:%s\n",$1,$3}' /etc/passwd
             ;;
         homeuid)
+#           Opcja gdy parametr homeuid.
+#           Option when the homeuid parameter.
             echo -e "${GREEN}Lista użytkowników: $NC"
             awk -F: '/\/home/ && ($3 >= 1000) {printf "%s:%s\n",$1,$3}' /etc/passwd
             ;;
         bash)
+#           Opcja gdy parametr bash.
+#           Option when the bash parameter.
             echo -e "${GREEN}Lista użytkowników: $NC"
             cat /etc/passwd | grep "/bin/bash" | cut -d: -f1
             ;;
-        *) echo -n "Chcesz wyświetlic listę Użytkoników? [tak czy nie]: "
+        *) 
+#          Opcja gdy parametr inny niz powyższe.
+#          Option when parameter other than the above.        
+           echo -n "Chcesz wyświetlic listę Użytkoników? [tak czy nie]: "
            read tnie
            case $tnie in
                 [tT] | [tT][aA][kK] )
@@ -100,6 +124,8 @@ function user_list()
     esac
 }
 
+# Funkcja wyswietla grupy dostepne w systemie
+# The function displays groups available in the system
 function group_list()
 {
     case "$1" in
@@ -117,6 +143,8 @@ function group_list()
     esac
 }
 
+# Funkcja wyswietla interfejsy sieciowe
+# Function display network interfaces
 function net_interfaces()
 {
     case "$1" in
@@ -147,6 +175,8 @@ function net_interfaces()
         
 }
 
+# Funkcja wysietla informacje o dysku
+# The function displays disk information
 function volume_info()
 {
     if [ $# -eq 0 ]; then
