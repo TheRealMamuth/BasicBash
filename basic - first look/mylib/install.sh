@@ -77,7 +77,7 @@ function install_pack()
         exit 1
 
     else
-        sudo $packman update | tee -a ./log/log_${currentDate}.log &> /dev/null
+        sudo $pacman update | tee -a ./log/log_${currentDate}.log &> /dev/null
         for install in "$@"
         do
             dpkg -s $install &> /dev/null
@@ -87,7 +87,7 @@ function install_pack()
             else
                 echo "Pakiet $install nie jest zainstalowany. Nastapi jego instalacja" | tee -a ./log/log_${currentDate}.log &> /dev/null
                 show_message INFO "Nastapi instalacja pakietu $install"
-                sudo $packman install $install | tee -a ./log/log_${currentDate}.log &> /dev/null
+                sudo $pacman install $install | tee -a ./log/log_${currentDate}.log &> /dev/null
                     if [ $? -eq 0 ]; then
                         echo "Pakiet $install zosatła poprawnie zainstalowany" | tee -a ./log/log_${currentDate}.log &> /dev/null
                         show_message OK "Pakiet $install został zainstalowany poprawnie"
